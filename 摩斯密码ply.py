@@ -30,6 +30,6 @@ time.sleep(0.1)
 gpio.output(7,gpio.HIGH)
 time.sleep(0.1)
 gpio.output(7,gpio.LOW)
-time.sleep(0.3)
+time.sleep(0.1)
 
 gpio.cleanup()
