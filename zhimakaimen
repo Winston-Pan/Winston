@@ -1,0 +1,55 @@
+import RPi.GPIO as gpio
+import time
+
+username="123456789"
+password="12345"
+name=raw_input("please enter your username:")
+if username==name:
+    print "username is right."
+    word=raw_input("please enter your password:")
+    if password==word:
+        print"your username and password are right,you have $1."
+    else:
+        print"your password is wrong."
+        gpio.setmode(gpio.BOARD)
+        gpio.setup(12,gpio.OUT)
+        gpio.output(12,False)
+        time.sleep(1)
+        gpio.output(12,True)
+        time.sleep(1)                   
+        gpio.output(12,False)
+        time.sleep(1)
+        gpio.output(12,True)
+        time.sleep(1)
+        gpio.output(12,False)
+        time.sleep(1)
+        gpio.output(12,True)
+        time.sleep(1)
+        gpio.cleanup()
+else:
+    print"your username is wrong."
+    name=raw_input("please enter your username again:")
+    if username==name:
+        print "username is right."
+        word=raw_input("please enter your password:")
+        if password==word:
+            print"your username and password are right,you have $1."
+        else:
+            print"your password is wrong,please come here next time."
+            gpio.setmode(gpio.BOARD)
+            gpio.setup(12,gpio.OUT)
+            gpio.output(12,False)
+            time.sleep(1)
+            gpio.output(12,True)
+            time.sleep(1)                   
+            gpio.output(12,False)
+            time.sleep(1)
+            gpio.output(12,True)
+            time.sleep(1)
+            gpio.output(12,False)
+            time.sleep(1)
+            gpio.output(12,True)
+            time.sleep(1)
+            gpio.cleanup()
+    else:
+        print"please come here next time."
